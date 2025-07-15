@@ -15,7 +15,7 @@ public class Usuario{
     [JsonProperty]
     public string Foto{get;private set;}
     
-    public Usuario(string Nombre, int Id, string Apellido, string Email, string Contraseña, DateTime FechaNacimiento, string Foto){
+    public void Inicializar(string Nombre, int Id, string Apellido, string Email, string Contraseña, DateTime FechaNacimiento, string Foto){
         this.Id= Id;
         this.Nombre= Nombre;
         this.Apellido=Apellido;

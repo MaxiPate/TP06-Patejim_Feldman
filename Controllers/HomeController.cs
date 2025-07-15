@@ -15,6 +15,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Object obj = new Object();
+        HttpContext.Session.SetString("Objeto", Objeto.ObjectToString(obj));
         return View();
+    }
+    public IActionResult volver()
+    {
+        Object obj = Objeto.StringToObject<Object>(HttpContext.Session.GetString("Objeto"));
+        HttpContext.Session.SetString("Objeto", Objeto.ObjectToString(obj));
+        return View("Index");
+    }
+    public IActionResult Personal()
+    {
+        
+        return View("Personal");
     }
 }

@@ -38,14 +38,15 @@ public class BD{
         return aux;
     }
         public List<DatoInteres> GetDatoInteres(int id) {
-            List<DatoFamiliar> aux;
+            List<DatoInteres> aux;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             
             string query = "SELECT * FROM DatoFamiliar WHERE Id = @id";
-            aux = connection.Query<DatoFamiliar>(query, new {id}).ToList();
+            aux = connection.Query<DatoInteres>(query, new {id}).ToList();
 
         }
         return aux;
         }
+
 }

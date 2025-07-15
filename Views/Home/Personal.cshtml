@@ -1,0 +1,9 @@
+@ViewBag.Usuario.Nombre
+@ViewBag.Usuario.Apellido
+
+<form action='@Url.Action("DatoFamiliar", "Home")' method = "post">
+        <input type="submit" value="Familiares">
+    </form>
+    <form action='@Url.Action("DatoInteres", "Home")' method = "post">
+        <input type="submit" value="Intereses">
+</form>
