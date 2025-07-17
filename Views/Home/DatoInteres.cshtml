@@ -1,6 +1,10 @@
-@foreach(DatoInteres idUser in ViewBag.DatosIntereses)
+@foreach(var idUser in ViewBag.DatosIntereses)
 {
     <h1>Intereses</h1>
     @idUser.TipoInteres;
     @idUser.Interes;
 }
+
+<form action='@Url.Action("Volver", "Home")' method ="post">
+<input type="submit" value="Volver">
+</form>

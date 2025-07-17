@@ -1,4 +1,4 @@
-@foreach(DatoFamiliar idUser in ViewBag.DatosFamiliares)
+@foreach(var idUser in ViewBag.DatosFamiliares)
 {
     <h1>Familiares</h1>
     @idUser.Nombre;
@@ -6,3 +6,7 @@
     @idUser.Parentesco;
     @idUser.Descripcion;
 }
+
+<form action='@Url.Action("Volver", "Home")' method ="post">
+<input type="submit" value="Volver">
+</form>

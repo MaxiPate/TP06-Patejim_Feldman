@@ -3,12 +3,12 @@ using Dapper;
 public static class BD{
     private static string _connectionString = @"Server=localhost; DataBase=Presentacion; Integrated Security=True; TrustServerCertificate=True;";
     public static int Login(string email, string contrasena){
-        int aux = -1;
+        int aux;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             
             string query = "SELECT * FROM Usuario WHERE Contrasena = @contrasena AND Email = @email";
-            aux = connection.QueryFirstOrDefault<int>(query, new {contrasena, email});
+            aux = connection.QueryFirstOrDefault<int>(query, new {email, contrasena});
 
         }
         return aux;
@@ -42,7 +42,7 @@ public static class BD{
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             
-            string query = "SELECT * FROM DatoFamiliar WHERE Id = @id";
+            string query = "SELECT * FROM DatoInteres WHERE Id = @id";
             aux = connection.Query<DatoInteres>(query, new {id}).ToList();
 
         }
