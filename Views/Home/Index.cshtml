@@ -1,11 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
-
-<div>
+﻿<div>
     <h1>Index</h1>
     <p>Bienvenidos a la mejor web de info</p>
-    <form method ="post">
+    <form action='@Url.Action("LogIn", "Home")' method ="post">
     Nombre:
     <input type = "text" name = "nombre" required>
     Email:

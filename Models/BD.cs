@@ -1,8 +1,8 @@
 using Microsoft.Data.SqlClient;
 using Dapper;
-public class BD{
+public static class BD{
     private static string _connectionString = @"Server=localhost; DataBase=Presentacion; Integrated Security=True; TrustServerCertificate=True;";
-    public int Login(string email, string contrasena){
+    public static int Login(string email, string contrasena){
         int aux = -1;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -14,7 +14,7 @@ public class BD{
         return aux;
     }
 
-    public Usuario GetUsuario(int id){
+    public static Usuario GetUsuario(int id){
         Usuario aux;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -26,7 +26,7 @@ public class BD{
         return aux;
     }
 
-    public List<DatoFamiliar> GetDatoFamiliar(int id){
+    public static List<DatoFamiliar> GetDatoFamiliar(int id){
         List<DatoFamiliar> aux;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -37,7 +37,7 @@ public class BD{
         }
         return aux;
     }
-        public List<DatoInteres> GetDatoInteres(int id) {
+        public static List<DatoInteres> GetDatoInteres(int id) {
             List<DatoInteres> aux;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {

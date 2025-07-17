@@ -15,19 +15,34 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Object obj = new Object();
-        HttpContext.Session.SetString("Objeto", Objeto.ObjectToString(obj));
         return View();
     }
-    public IActionResult volver()
+
+    public IActionResult LogIn(string contrasena, string email)
     {
-        Object obj = Objeto.StringToObject<Object>(HttpContext.Session.GetString("Objeto"));
-        HttpContext.Session.SetString("Objeto", Objeto.ObjectToString(obj));
-        return View("Index");
+        int id = BD.Login(contrasena, email);
+        if(id == -1){
+            return View("ErrorLogIn");
+        }else{
+            HttpContext.Session.SetString("idUser", id.ToString());
+            return View("Personal");
+        }
     }
-    public IActionResult Personal()
-    {
-        
-        return View("Personal");
+
+    public IActionResult DatoFamiliar(){
+        int id = int.Parse(HttpContext.Session.GetString("idUser"));
+        ViewBag.DatosFamiliares = BD.GetDatoFamiliar(id);
+        return View("DatoFamiliar");
+    }
+
+    public IActionResult DatoInteres(){
+        int id = int.Parse(HttpContext.Session.GetString("idUser"));
+        ViewBag.DatosIntereses = BD.GetDatoFamiliar(id);
+        return View("DatoInteres");
+    }
+
+    public IActionResult LogOut(){
+        HttpContext.Session.Remove("idUser");
+        return View("LogOut");
     }
 }
