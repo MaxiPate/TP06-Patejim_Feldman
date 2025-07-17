@@ -1,0 +1,8 @@
+@foreach(DatoFamiliar idUser in ViewBag.DatosFamiliares)
+{
+    <h1>Familiares</h1>
+    @idUser.Nombre;
+    @idUser.Apellido;
+    @idUser.Parentesco;
+    @idUser.Descripcion;
+}

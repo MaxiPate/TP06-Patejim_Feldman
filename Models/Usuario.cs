@@ -9,18 +9,18 @@ public class Usuario{
     [JsonProperty]
     public string Email{get;private set;}
     [JsonProperty]
-    public string Contraseña{get;private set;}
+    public string Contrasena{get;private set;}
     [JsonProperty]
     public DateTime FechaNacimiento{get;private set;}
     [JsonProperty]
     public string Foto{get;private set;}
     
-    public void Inicializar(string Nombre, int Id, string Apellido, string Email, string Contraseña, DateTime FechaNacimiento, string Foto){
+    public void Inicializar(string Nombre, int Id, string Apellido, string Email, string Contrasena, DateTime FechaNacimiento, string Foto){
         this.Id= Id;
         this.Nombre= Nombre;
         this.Apellido=Apellido;
         this.Email=Email;
-        this.Contraseña=Contraseña;
+        this.Contrasena=Contrasena;
         this.FechaNacimiento=FechaNacimiento;
         this.Foto=Foto;
     }
