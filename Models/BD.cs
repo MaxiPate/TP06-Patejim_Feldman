@@ -31,7 +31,7 @@ public static class BD{
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             
-            string query = "SELECT * FROM DatoFamiliar WHERE Id = @id";
+            string query = "SELECT * FROM DatoFamiliar WHERE IdUsuario = @id";
             aux = connection.Query<DatoFamiliar>(query, new {id}).ToList();
 
         }
@@ -42,7 +42,7 @@ public static class BD{
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             
-            string query = "SELECT * FROM DatoInteres WHERE Id = @id";
+            string query = "SELECT * FROM DatoInteres WHERE IdUsuario = @id";
             aux = connection.Query<DatoInteres>(query, new {id}).ToList();
 
         }

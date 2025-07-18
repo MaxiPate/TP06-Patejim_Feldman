@@ -26,6 +26,9 @@ public class HomeController : Controller
         }else{
             HttpContext.Session.SetString("idUser", id.ToString());
             ViewBag.Usuario=BD.GetUsuario(id);
+            ViewBag.Dia=BD.GetUsuario(id).FechaNacimiento.Day;
+            ViewBag.Mes=BD.GetUsuario(id).FechaNacimiento.Month;
+            ViewBag.Año=BD.GetUsuario(id).FechaNacimiento.Year;
             return View("Personal");
         }
     }
@@ -45,6 +48,9 @@ public class HomeController : Controller
     public IActionResult Volver(){
         int id = int.Parse(HttpContext.Session.GetString("idUser"));
         ViewBag.Usuario=BD.GetUsuario(id);
+        ViewBag.Dia=BD.GetUsuario(id).FechaNacimiento.Day;
+        ViewBag.Mes=BD.GetUsuario(id).FechaNacimiento.Month;
+        ViewBag.Año=BD.GetUsuario(id).FechaNacimiento.Year;
         return View("Personal");
     }
 

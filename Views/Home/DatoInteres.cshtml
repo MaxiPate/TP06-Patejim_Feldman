@@ -1,9 +1,12 @@
+<h1>Intereses</h1>
+<section>
 @foreach(var idUser in ViewBag.DatosIntereses)
 {
-    <h1>Intereses</h1>
-    @idUser.TipoInteres;
-    @idUser.Interes;
+    <h1>
+    @idUser.Interes
+    </h1>
 }
+</section>
 
 <form action='@Url.Action("Volver", "Home")' method ="post">
 <input type="submit" value="Volver">

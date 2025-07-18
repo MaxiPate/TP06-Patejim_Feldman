@@ -1,11 +1,15 @@
+<h1>Familiares</h1>
+<section>
 @foreach(var idUser in ViewBag.DatosFamiliares)
 {
-    <h1>Familiares</h1>
-    @idUser.Nombre;
-    @idUser.Apellido;
-    @idUser.Parentesco;
-    @idUser.Descripcion;
+    <div>
+    <h1>@idUser.Nombre</h1>
+    <h1>@idUser.Apellido</h1>
+    <h1>@idUser.Parentesco</h1>
+    <h1>@idUser.Descripcion</h1>
+    </div>
 }
+</section>
 
 <form action='@Url.Action("Volver", "Home")' method ="post">
 <input type="submit" value="Volver">

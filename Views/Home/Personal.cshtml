@@ -1,8 +1,8 @@
 <h1>Bienvenido @ViewBag.Usuario.Nombre @ViewBag.Usuario.Apellido</h1>
 
-<h1>@ViewBag.Usuario.FechaNacimiento</h1>
+<h1>@ViewBag.Dia / @ViewBag.Mes / @ViewBag.Año </h1>
 
-<img src="/img.@ViewBag.Usuario.Foto">
+<img src="../img/@ViewBag.Usuario.Foto">
 
 <form action='@Url.Action("DatoFamiliar", "Home")' method = "post">
         <input type="submit" value="Familiares">
